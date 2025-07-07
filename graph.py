@@ -5,11 +5,19 @@ import base64
 from collections import defaultdict
 import plotly.graph_objects as go
 
-# Reddit API credentials
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+client_id = os.getenv('REDDIT_CLIENT_ID')
+client_secret = os.getenv('REDDIT_CLIENT_SECRET')
+user_agent = os.getenv('REDDIT_USER_AGENT')
+
 reddit = praw.Reddit(
-    client_id="rtXOfLssM8eIxYLsBZDmrg",
-    client_secret="IgYACIeWAZa_bntF9lScHpcZzg6-Rw",
-    user_agent="Scrapping_App"
+    client_id=client_id,
+    client_secret=client_secret,
+    user_agent=user_agent
 )
 
 # Subreddit and keywords
