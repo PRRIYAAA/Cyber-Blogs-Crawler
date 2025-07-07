@@ -26,4 +26,48 @@ A real-time web dashboard that visualizes cybersecurity incidents with live char
 ---
 
 ## 📁 Folder Structure
+cybersecurity-dashboard/
+│
+├── app.py                     # 🔁 Main Flask (Python) backend file
+│
+├── 📁 templates/              # 🖼️ HTML files served via Flask
+│   └── index.html 
+
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone or Download
+```bash
+git clone https://github.com/your-username/cybersecurity-dashboard.git
+cd cybersecurity-dashboard
+
+GET /fetch_posts
+{
+  "posts": [
+    {
+      "title": "Example Incident",
+      "url": "https://example.com",
+      "score": 42,
+      "keywords": ["malware", "ransomware"],
+      "timestamp": "2025-07-07T15:30:00Z"
+    }
+  ]
+}
+
+python app.py
+
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+@app.route("/fetch_posts")
+def fetch_posts():
+    # Replace with actual data fetching logic
+    return {"posts": [...]}
 
